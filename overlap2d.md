@@ -94,7 +94,7 @@ Lalu pada bagian render() kita hanya perlu memanggil Scene tersebut untuk bisa b
 	}
 ```
 
-Setelah selesai semua dilakukan, maka hasil dari yang ktia buat akan menjadi seperti ini:
+Setelah selesai semua dilakukan, maka hasil dari yang kita buat akan menjadi seperti ini:
 
 <img align="middle" src="https://user-images.githubusercontent.com/30854454/30870401-f669cdba-a30d-11e7-884c-ef79eabe32d8.png" >
 
