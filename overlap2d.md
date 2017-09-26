@@ -99,4 +99,4 @@ Setelah selesai semua dilakukan, maka hasil dari yang ktia buat akan menjadi sep
 <img align="middle" src="https://user-images.githubusercontent.com/30854454/30870401-f669cdba-a30d-11e7-884c-ef79eabe32d8.png" >
 
 ## Kesimpulan
-Extensions third-party Overlap2D ternyata memudahkan kita dalam membuat game berjenis platformer/side-scroller. Kita hanya perlu membuat desain game di Overlap2D, setelah itu semua selesai dilakukan kita harus mengekspornya ke dalam projek LibGDX kita. Jadi, kita tidak perlu bersusah payah membuat desain langsung di dalam LibGDX, kita hanya harus menggunakan bantuan extension third-party seperti Overlap2D.
+Extensions third-party Overlap2D ternyata memudahkan kita dalam membuat game berjenis platformer/side-scroller. Kita hanya perlu membuat desain game di Overlap2D, setelah itu semua selesai dilakukan kita harus mengekspornya ke dalam projek LibGDX kita. Jadi, kita tidak perlu bersusah payah membuat desain langsung di dalam LibGDX, kita hanya harus menggunakan bantuan extension third-party seperti Overlap2D. Masih banyak lagi yang bisa dilakukan di tutorial tersebut, kita sedang mempelajarinya lebih mendalam.
