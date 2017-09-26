@@ -11,3 +11,6 @@ Untuk mencoba Overlap2D di LibGDX, berikut ada video dari Youtube yang memberika
 alt="" width="240" height="180" border="10" /></a>
   <p>Making Simple Sidescroller with Overlap2D and libGDX - Tutorial</p>
 </div>
+
+## Note
+Sejauh ini kita hanya mengikuti tutorial dan masih terkendala, tidak bisa menampilkan objek-objek yang ada, dan kami masih mencoba untuk memahami cara menggunakan Overlap2D ini untuk LibGDX.
