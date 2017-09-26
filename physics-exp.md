@@ -2,7 +2,7 @@
 
 Pada bagian ini kita akan mencoba menggunakan physics di LibGDX. Kita menggunakan extensions Box2d untuk membantu kita menggunakan physics untuk object yang akan kita gunakan. 
 
-<img align="middle" src="https://user-images.githubusercontent.com/30854454/30844444-3c03c402-a2b9-11e7-870b-da31c1ef8cc5.png"  />
+<img align="middle" src="https://user-images.githubusercontent.com/30854454/30844444-3c03c402-a2b9-11e7-870b-da31c1ef8cc5.png">
 
 Berikut code yang akan dibahas untuk dasar menggunakan physics :
 
@@ -119,6 +119,7 @@ BodyDef merupakan sebuah class untuk menyimpan semua data yang dibutuhkan untuk 
 * Dynamic   = objek yang bergerak dan dipengaruhi oleh gaya dan objek dinamis, kinematik dan statis lainnya. Cocok untuk benda yang perlu dipindahkan dan dipengaruhi oleh gaya
 * Kinematic = peralihan antara statis dan dinamis. Seperti statis, tidak bereaksi terhadap gaya. Tetapi seperti dinamis, memiliki kemampuan untuk bergerak. Badan Kinematik sangat bagus untuk mengendalikan gerak tubuh secara keseluruhan, seperti platform yang bergerak dalam permainan platform.
 * Static    = tidak bergerak dan tidak terpengaruh oleh gaya. statis sangat cocok untuk tanah, dinding, dan benda apapun yang tidak perlu bergerak.
+
 Pada kasus ini, yang paling cocok untuk benda ini adalah DynamicBody, karena bergantung terhadap gaya yang akan kita berikan kepadanya(yaitu gravitasi). Lalu set DynamicBody dengan sprite yang kita gunakan, dan definisikan ke dalam Body dengan world.createBody().
 
 Ketika sebuah body dikonstruk, kita harus memberikan bentuk(shape) setelah itu.
@@ -142,3 +143,37 @@ Kemudian shape yang sebelumnya kita gunakan, sekarang akan kita singkirkan karen
 ```
 
 ## render()
+
+Kita masuk ke dalam bagian render untuk memasukkan/menggambar yang sudah dideklarasi sebelemnya di bagian create(). Kita lihat yang bagian pertama.
+```
+    world.step(Gdx.graphics.getDeltaTime(), 6, 2);
+```
+world.step() adalah pada dasarnya memperbarui objek world melalui satuan waktu. Argumen pertama adalah selang waktu, atau jumlah waktu yang digunakan untuk disimulasikan oleh world. Menggunakan satuan waktu di LibGDX bisa menggunakan Gdx.graphics.getDeltaTime() untuk mendapatkannya. Argumen kedua dan ketiga adalah velocityIterations dan positionIterations diset 6 dan 2 adalah standar yang digunakan world.step() untuk timestepnya. Penjelasan mengenai Timestep bisa dilihat disini [Timestep Discussion](https://gafferongames.com/post/fix_your_timestep).
+
+```
+    sprite.setPosition(body.getPosition().x, body.getPosition().y);
+
+    Gdx.gl.glClearColor(1, 1, 1, 1);
+    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+    batch.begin();
+    batch.draw(sprite, sprite.getX(), sprite.getY());
+    batch.end();
+```
+
+Selanjutnya di bagian render() kita perbaharui posisi sprite sesuai dengan tubuh fisik yang diperbaharui, kita lihat bahwa di dalam sprite.setPosition() terdapat posisi body yang kita deklarasi sebelumnya. Terakhir kita draw spritenya ke dalam batch dan menentukan posisi spritenya.
+
+## dispose()
+
+Setelah semua objek digunakan, saatnya melakukan dispose/destroy untuk mengurangi penggunaan memori pada saat menjalankan sebuah game.
+```
+    @Override
+    public void dispose() {        
+        img.dispose();
+        world.dispose();
+    }
+```
+
+## Kesimpulan
+
+Menggunakan Physics Box2D memang membutuhkan konsep yang kuat mengenai hukum-hukum fisika dan perhitugannya. Namun, dengan adanya ini kita dapat menambahkan ke dalam game sebagai dasar memberikan bentuk fisik kepada objek/benda yang akan digunakan di game kita, mulai dari player,obstacle,enemy,ornament, dan sebagainya supaya dapat bergerak sebagaimana mestinya.
+
