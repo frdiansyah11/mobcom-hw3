@@ -16,7 +16,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
 
-public class Physics1 extends ApplicationAdapter {
+public class PhysicsTest extends ApplicationAdapter {
     SpriteBatch batch;
     Sprite sprite;
     Texture img;
@@ -76,3 +76,18 @@ public class Physics1 extends ApplicationAdapter {
     }
 }
 ```
+Kita akan membahas satu persatu mengenai code. Pada contoh ini, nantinya kita akan menggunakan sampel gambar dari libgdx, gambar tersebut nantinya akan diberi bentuk fisik. Pertama kali kita mendeklarasikan beberapa class yang akan digunakan:
+```
+    SpriteBatch batch;
+    Sprite sprite;
+    Texture img;
+    World world;
+    Body body;
+```
+Keterangan:
+* SprieBatch = memberikan tekstur dan koordinat masing-masing persegi panjang untuk digambar.
+* Sprite     = memberikan TextureRegion, menggambarkan geometri, dan memberikan warna.
+* Texture    = class yang mendekode file gambar dan meload ke GPU. File gambar harus ditempatkan di folder "assets".
+* World      = mengelola semua entitas fisika, simulasi dinamis, dan query asinkron. World juga berisi fasilitas manajemen memori yang efisien.
+* Body       = memberikan rigid-body. Body ini akan dibuat dengan method World.CreateBody.
+
